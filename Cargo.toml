@@ -1,0 +1,9 @@
+[package]
+name = "mathrs"
+license = "MIT"
+license-file = "LICENSE.md"
+version = "0.0.1"
+authors = ["Pedro Cabral <pedro@cabral.mat.br>"]
+description = "Scientific computing with Rust"
+repository = "https://github.com/mathrs/mathrs"
+edition = "2018"
