@@ -1,1 +1,1 @@
-# MathRS
+<img src="logo.png" width="256px" height="256px">
