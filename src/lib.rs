@@ -1,9 +1,9 @@
 /// # MathRS
 /// Scientific, numeric and symbolic mathematical crate for computing with Rust.
 mod mathrs {
-    use std::ops::{Add, Div, Mul, Sub};
+    use std::ops::{Add, Div, Mul, Not, Sub};
 
-    /// Point ─ A dimensionless point in a two-dimensional cartesian space.
+    /// Point ─ A dimensionless `[x, y]` point in a two-dimensional cartesian space.
     /// Has two parameters, `x`, and `y`, both are `f64`.
     #[derive(Debug, Copy, Clone, PartialEq)]
     struct Point {
@@ -11,104 +11,160 @@ mod mathrs {
         y: f64,
     }
 
-    impl Add for Point {
-        type Output = Point;
-
-        fn add(self, other: Point) -> Point {
-            Point {
-                x: self.x + other.x,
-                y: self.y + other.y,
-            }
-        }
-    }
-
-    impl Sub for Point {
-        type Output = Point;
-
-        fn sub(self, other: Point) -> Point {
-            Point {
-                x: self.x - other.x,
-                y: self.y - other.y,
-            }
-        }
-    }
-
-    impl Mul for Point {
-        type Output = Point;
-
-        fn mul(self, other: Point) -> Point {
-            Point {
-                x: self.x * other.x,
-                y: self.y * other.y,
-            }
-        }
-    }
-
-    impl Div for Point {
-        type Output = Point;
-
-        fn div(self, other: Point) -> Point {
-            Point {
-                x: self.x / other.x,
-                y: self.y / other.y,
-            }
-        }
-    }
-
-    /// Point3D ─ A dimensionless point in a three-dimensional cartesian space.
-    /// Has three parameters, `x`, `y`, and `z`, all are `f64`.
+    /// Vector ─ A `[x, y]` vector in a two-dimensional cartesian space.
+    /// Has two parameters, `x`, and `y`, both are `f64`.
     #[derive(Debug, Copy, Clone, PartialEq)]
-    struct Point3D {
+    struct Vector {
         x: f64,
         y: f64,
-        z: f64,
     }
 
-    impl Add for Point3D {
-        type Output = Point3D;
+    /// Negation Operator [!]
+    /// You can negate a `Vector` struct using the `!` operator.
+    /// This operation will give you the **oppositve vector**. When added together, **opposite vectors** cancel each other out.
+    /// ```rust
+    /// assert_eq!(Vector {x: 1.0, y: 1.0}!, Vector {x: -1.0, y: -1.0})
+    /// ```
+    impl Not for Vector {
+        type Output = Vector;
 
-        fn add(self, other: Point3D) -> Point3D {
-            Point3D {
+        fn not(self) -> Self::Output {
+            Vector {
+                x: self.x * -1.0,
+                y: self.y * -1.0,
+            }
+        }
+    }
+
+    /// Addition Operator [+]
+    /// You can add two `Vector` structs using the `+` operator.
+    /// ```rust
+    /// assert_eq!(Vector {x: 1.0, y: 1.0} + Vector {x: 1.0, y: 1.0}, Vector {x: 2.0, y: 2.0})
+    /// ```
+    impl Add for Vector {
+        type Output = Vector;
+
+        fn add(self, other: Vector) -> Self::Output {
+            Vector {
                 x: self.x + other.x,
                 y: self.y + other.y,
-                z: self.z + other.z,
             }
         }
     }
 
-    impl Sub for Point3D {
-        type Output = Point3D;
+    /// Subtraction Operator [-]
+    /// You can subtract two `Vector` structs using the `-` operator.
+    /// ```rust
+    /// assert_eq!(Vector {x: 1.0, y: 1.0} - Vector {x: 1.0, y: 1.0}, Vector {x: 0.0, y: 0.0})
+    /// ```
+    impl Sub for Vector {
+        type Output = Vector;
 
-        fn sub(self, other: Point3D) -> Point3D {
-            Point3D {
+        fn sub(self, other: Vector) -> Self::Output {
+            Vector {
                 x: self.x - other.x,
                 y: self.y - other.y,
-                z: self.z - other.z,
             }
         }
     }
 
-    impl Mul for Point3D {
-        type Output = Point3D;
+    /// Multiplication Operator [*]
+    /// You can multiply two `Vector` structs using the `*` operator.
+    /// ```rust
+    /// assert_eq!(Vector {x: 0.5, y: 0.5} * Vector {x: 2.0, y: 2.0}, Vector {x: 1.0, y: 1.0})
+    /// ```
+    impl Mul for Vector {
+        type Output = Vector;
 
-        fn mul(self, other: Point3D) -> Point3D {
-            Point3D {
+        fn mul(self, other: Vector) -> Self::Output {
+            Vector {
                 x: self.x * other.x,
                 y: self.y * other.y,
-                z: self.z * other.z,
             }
         }
     }
 
-    impl Div for Point3D {
-        type Output = Point3D;
+    /// Scalar Multiplication Operator [*]
+    /// You can multiply a `Vector` struct with a scalar (`f64`) using the `*` operator.
+    /// ```rust
+    /// assert_eq!(Vector {x: 1.0, y: 1.0} * 2.0, Vector {x: 2.0, y: 2.0})
+    /// ```
+    impl Mul<f64> for Vector {
+        type Output = Vector;
 
-        fn div(self, other: Point3D) -> Point3D {
-            Point3D {
+        fn mul(self, scalar: f64) -> Self::Output {
+            Vector {
+                x: self.x * scalar,
+                y: self.y * scalar,
+            }
+        }
+    }
+
+    /// Division Operator [/]
+    /// You can divide two `Vector` structs using the `/` operator.
+    /// ```rust
+    /// assert_eq!(Vector {x: 9.99, y: 9.99} / Vector {x: 9.99, y: 9.99} Vector {x: 1.0, y: 1.0})
+    /// ```
+    impl Div for Vector {
+        type Output = Vector;
+
+        fn div(self, other: Vector) -> Self::Output {
+            Vector {
                 x: self.x / other.x,
                 y: self.y / other.y,
-                z: self.z / other.z,
             }
+        }
+    }
+
+    /// Scalar Division Operator [/]
+    /// You can divide a `Vector` struct with a scalar (`f64`) using the `/` operator.
+    /// ```rust
+    /// assert_eq!(Vector {x: 9.99, y: 9.99} / 9.99, Vector {x: 1.0, y: 1.0})
+    /// ```
+    impl Div<f64> for Vector {
+        type Output = Vector;
+
+        fn div(self, scalar: f64) -> Self::Output {
+            Vector {
+                x: self.x / scalar,
+                y: self.y / scalar,
+            }
+        }
+    }
+
+    /// # MathRS Tests
+    /// All of the test cases for the `structs` and `functions` of mathrs.
+    #[cfg(test)]
+    mod mathrs_tests {
+
+        use super::*;
+
+        #[test]
+        fn point_operations() {
+            assert_eq!(!Vector { x: 1.0, y: 1.0 }, Vector { x: -1.0, y: -1.0 });
+
+            assert_eq!(
+                Vector { x: 1.0, y: 1.0 } + Vector { x: 1.0, y: 1.0 },
+                Vector { x: 2.0, y: 2.0 }
+            );
+            assert_eq!(
+                Vector { x: 3.14, y: 3.14 } - Vector { x: 3.14, y: 3.14 },
+                Vector { x: 0.0, y: 0.0 }
+            );
+            assert_eq!(
+                Vector { x: 0.5, y: 0.5 } * Vector { x: 2.0, y: 2.0 },
+                Vector { x: 1.0, y: 1.0 }
+            );
+
+            assert_eq!(
+                Vector { x: 1.0, y: 1.0 } * 2.22,
+                Vector { x: 2.22, y: 2.22 }
+            );
+
+            assert_eq!(
+                Vector { x: 9.99, y: 9.99 } / Vector { x: 9.99, y: 9.99 },
+                Vector { x: 1.0, y: 1.0 }
+            );
         }
     }
 }

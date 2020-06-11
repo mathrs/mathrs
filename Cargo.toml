@@ -1,9 +1,15 @@
 [package]
 name = "mathrs"
+version = "0.0.1"
+
+authors = ["Pedro Cabral <pedro@cabral.mat.br>"]
+
+description = "Scientific, numeric and symbolic mathematical crate for computing with Rust."
+
+homepage = "https://mathrs.github.io/"
+repository = "https://github.com/mathrs/mathrs"
+
 license = "MIT"
 license-file = "LICENSE.md"
-version = "0.0.1"
-authors = ["Pedro Cabral <pedro@cabral.mat.br>"]
-description = "Scientific, numeric and symbolic mathematical crate for computing with Rust."
-repository = "https://github.com/mathrs/mathrs"
+
 edition = "2018"
