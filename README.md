@@ -4,6 +4,8 @@
 
 ## About
 
+**Important!** This project is still in early development! All of its features implemented over the minor versions are fully working, but prone to changes.
+
 **mathrs** is a scientific, numeric and symbolic mathematical crate for computing with [Rust](https://rust-lang.org).
 
 - **Website** ─ https://mathrs.github.io

@@ -1,6 +1,6 @@
 [package]
 name = "mathrs"
-version = "0.0.2"
+version = "0.0.3"
 
 authors = ["Pedro Cabral <pedro@cabral.mat.br>"]
 
