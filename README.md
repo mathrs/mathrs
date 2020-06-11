@@ -12,6 +12,12 @@
 - **Reference** ─ https://mathrs.github.io/reference
 - **Documentation** ─ https://docs.rs/mathrs
 
+## Features
+- **Zero dependencies**, and **no unsafe code**.
+- **Comprehensive** documentation with examples.
+- **Array** and **N-Dimensional Array** computing with utilities.
+- **2D Vector** and **3D Vector** computing.
+
 ## Installation
 You can install mathrs on your project by inserting the following on your `Cargo.toml` file:
 

@@ -8,12 +8,34 @@
 //!
 //! <img src="https://img.shields.io/crates/v/mathrs?style=flat-square"> <img src="https://img.shields.io/crates/d/mathrs?style=flat-square">
 //!
-//! Scientific, numeric and symbolic mathematical crate for computing with Rust.
+//!## About
+//!
+//! **Important!** This project is still in early development! All of its features implemented over the minor versions are fully working, but prone to changes.
+//!
+//! **mathrs** is a scientific, numeric and symbolic mathematical crate for computing with [Rust](https://rust-lang.org).
+
+//! - **Website** ─ https://mathrs.github.io
+//! - **Reference** ─ https://mathrs.github.io/reference
+//! - **Documentation** ─ https://docs.rs/mathrs
+//!
+//! ## Features
+//! - **Zero dependencies**, and **no unsafe code**.
+//! - **Comprehensive** documentation with examples.
+//! - **Array** and **N-Dimensional Array** computing with utilities.
+//! - **2D Vector** and **3D Vector** computing.
+//!
+//! ## Installation
+//! You can install mathrs on your project by inserting the following on your `Cargo.toml` file:
+//!
+//! ```toml
+//! [dependencies]
+//! mathrs = "*"
+//! ```
 
 use std::ops::{Add, Div, Index, IndexMut, Mul, Not, Sub};
 
-/// Mathematical constant, equivalent to `~0.577215`, has a precision of 40 digits.
-pub const EULER_GAMMA: f64 = 0.5772156649015328606065120900824024310421;
+/// Mathematical constant, equivalent to `~0.577215`, has a precision of 64 digits.
+pub const EULER_GAMMA: f64 = 0.5772156649015328606065120900824024310421593359399235988057672349;
 
 /// A dimensionless `[y, x]` point in a two-dimensional cartesian space.
 /// Has two parameters, `x`, and `y`, both are `f64`.
