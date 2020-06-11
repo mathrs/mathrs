@@ -1,9 +1,9 @@
 /// # MathRS
 /// Scientific, numeric and symbolic mathematical crate for computing with Rust.
 mod mathrs {
-    use std::ops::{Add, Div, Mul, Not, Sub};
+    use std::ops::{Add, Div, Index, Mul, Not, Sub};
 
-    /// Point ─ A dimensionless `[x, y]` point in a two-dimensional cartesian space.
+    /// Point ─ A dimensionless `[y, x]` point in a two-dimensional cartesian space.
     /// Has two parameters, `x`, and `y`, both are `f64`.
     #[derive(Debug, Copy, Clone, PartialEq)]
     struct Point {
@@ -11,7 +11,7 @@ mod mathrs {
         y: f64,
     }
 
-    /// Vector ─ A `[x, y]` vector in a two-dimensional cartesian space.
+    /// Vector ─ A `[y, x]` vector in a two-dimensional cartesian space.
     /// Has two parameters, `x`, and `y`, both are `f64`.
     #[derive(Debug, Copy, Clone, PartialEq)]
     struct Vector {
@@ -19,7 +19,25 @@ mod mathrs {
         y: f64,
     }
 
-    /// Negation Operator [!]
+    /// ### Indexing
+    /// You can get the `x` and `y` values of a `Vector` using indexing with `[]`.
+    /// This operation will give you the **oppositve vector**. When added together, **opposite vectors** cancel each other out.
+    /// ```rust
+    /// assert_eq!(!Vector {x: 1.0, y: 1.0}, Vector {x: -1.0, y: -1.0})
+    /// ```
+    impl Index<u8> for Vector {
+        type Output = f64;
+
+        fn index(&self, index: u8) -> &Self::Output {
+            match index {
+                0 => &self.y,
+                1 => &self.x,
+                _ => panic!("Index for Vector must be 0 for y or 1 for x."),
+            }
+        }
+    }
+
+    /// ### Negation Operator [!]
     /// You can negate a `Vector` struct using the `!` operator.
     /// This operation will give you the **oppositve vector**. When added together, **opposite vectors** cancel each other out.
     /// ```rust
@@ -36,7 +54,7 @@ mod mathrs {
         }
     }
 
-    /// Addition Operator [+]
+    /// ### Addition Operator [+]
     /// You can add two `Vector` structs using the `+` operator.
     /// ```rust
     /// assert_eq!(Vector {x: 1.0, y: 1.0} + Vector {x: 1.0, y: 1.0}, Vector {x: 2.0, y: 2.0})
@@ -52,7 +70,7 @@ mod mathrs {
         }
     }
 
-    /// Subtraction Operator [-]
+    /// ### Subtraction Operator [-]
     /// You can subtract two `Vector` structs using the `-` operator.
     /// ```rust
     /// assert_eq!(Vector {x: 1.0, y: 1.0} - Vector {x: 1.0, y: 1.0}, Vector {x: 0.0, y: 0.0})
@@ -68,7 +86,7 @@ mod mathrs {
         }
     }
 
-    /// Multiplication Operator [*]
+    /// ### Multiplication Operator [*]
     /// You can multiply two `Vector` structs using the `*` operator.
     /// ```rust
     /// assert_eq!(Vector {x: 0.5, y: 0.5} * Vector {x: 2.0, y: 2.0}, Vector {x: 1.0, y: 1.0})
@@ -84,7 +102,7 @@ mod mathrs {
         }
     }
 
-    /// Scalar Multiplication Operator [*]
+    /// ### Scalar Multiplication Operator [*]
     /// You can multiply a `Vector` struct with a scalar (`f64`) using the `*` operator.
     /// ```rust
     /// assert_eq!(Vector {x: 1.0, y: 1.0} * 2.0, Vector {x: 2.0, y: 2.0})
@@ -100,7 +118,7 @@ mod mathrs {
         }
     }
 
-    /// Division Operator [/]
+    /// ### Division Operator [/]
     /// You can divide two `Vector` structs using the `/` operator.
     /// ```rust
     /// assert_eq!(Vector {x: 9.99, y: 9.99} / Vector {x: 9.99, y: 9.99} Vector {x: 1.0, y: 1.0})
@@ -116,7 +134,7 @@ mod mathrs {
         }
     }
 
-    /// Scalar Division Operator [/]
+    /// ### Scalar Division Operator [/]
     /// You can divide a `Vector` struct with a scalar (`f64`) using the `/` operator.
     /// ```rust
     /// assert_eq!(Vector {x: 9.99, y: 9.99} / 9.99, Vector {x: 1.0, y: 1.0})
@@ -132,7 +150,7 @@ mod mathrs {
         }
     }
 
-    /// # MathRS Tests
+    /// ## Test Cases
     /// All of the test cases for the `structs` and `functions` of mathrs.
     #[cfg(test)]
     mod mathrs_tests {
