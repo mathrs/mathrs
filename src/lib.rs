@@ -3,6 +3,7 @@
 mod mathrs {
 
     #![doc(html_logo_url = "https://raw.githubusercontent.com/mathrs/mathrs/master/logo.png")]
+    #![doc(html_favicon_url = "https://raw.githubusercontent.com/mathrs/mathrs/master/favicon.ico")]
 
     use std::ops::{Add, Div, Index, Mul, Not, Sub};
 
