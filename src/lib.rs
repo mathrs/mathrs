@@ -1,6 +1,9 @@
 /// # MathRS
 /// Scientific, numeric and symbolic mathematical crate for computing with Rust.
 mod mathrs {
+
+    #![doc(html_logo_url = "https://raw.githubusercontent.com/mathrs/mathrs/master/logo.png")]
+
     use std::ops::{Add, Div, Index, Mul, Not, Sub};
 
     /// Point ─ A dimensionless `[y, x]` point in a two-dimensional cartesian space.
@@ -159,6 +162,11 @@ mod mathrs {
 
         #[test]
         fn point_operations() {
+            assert_eq!(
+                Vector { x: 1.0, y: 1.0 }[0] * Vector { x: 1.0, y: 1.0 }[1],
+                1.0
+            );
+
             assert_eq!(!Vector { x: 1.0, y: 1.0 }, Vector { x: -1.0, y: -1.0 });
 
             assert_eq!(
