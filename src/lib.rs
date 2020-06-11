@@ -15,6 +15,23 @@ mod mathrs {
         y: f64,
     }
 
+    /// ### Indexing
+    /// You can get the `x` and `y` values of a `Point` using indexing with `[]`.
+    /// ```rust
+    /// assert_eq!(Point {x: 1.11, y: 9.99}[0], 9.99)
+    /// ```
+    impl Index<u8> for Point {
+        type Output = f64;
+
+        fn index(&self, index: u8) -> &Self::Output {
+            match index {
+                0 => &self.y,
+                1 => &self.x,
+                _ => panic!("Index for Vector must be 0 for y or 1 for x."),
+            }
+        }
+    }
+
     /// Vector ─ A `[y, x]` vector in a two-dimensional cartesian space.
     /// Has two parameters, `x`, and `y`, both are `f64`.
     #[derive(Debug, Copy, Clone, PartialEq)]
@@ -25,9 +42,8 @@ mod mathrs {
 
     /// ### Indexing
     /// You can get the `x` and `y` values of a `Vector` using indexing with `[]`.
-    /// This operation will give you the **oppositve vector**. When added together, **opposite vectors** cancel each other out.
     /// ```rust
-    /// assert_eq!(!Vector {x: 1.0, y: 1.0}, Vector {x: -1.0, y: -1.0})
+    /// assert_eq!(Vector {x: 1.11, y: 9.99}[0], 9.99)
     /// ```
     impl Index<u8> for Vector {
         type Output = f64;
