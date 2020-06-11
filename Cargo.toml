@@ -11,4 +11,6 @@ repository = "https://github.com/mathrs/mathrs"
 
 license = "MIT"
 
+readme = "README.md"
+
 edition = "2018"
