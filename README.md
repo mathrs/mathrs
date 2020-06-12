@@ -33,4 +33,4 @@ For a documentation with more examples and tutorials, check the documentation at
 
 ## License
 
-mathrs is provided under the MIT license. See [LICENSE](LICENSE).
+mathrs is provided under the MIT license. See [LICENSE](LICENSE). These files may not be copied, modified, or distributed except according to those terms.
