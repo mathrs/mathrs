@@ -7,18 +7,15 @@
 
 // Crate name for https://crates.io
 #![crate_name = "mathrs"]
-//
 
 // Deny missing documentation and code examples!
 #![deny(missing_docs)]
 #![deny(missing_doc_code_examples)]
-//
 
 // Documentation cute logo.png and favicon.ico for docs.rs (ᵔᴥᵔ)
 #![doc(html_logo_url = "https://raw.githubusercontent.com/mathrs/mathrs/master/logo.png")]
 #![doc(html_favicon_url = "https://raw.githubusercontent.com/mathrs/mathrs/master/favicon.ico")]
 #![doc(issue_tracker_base_url = "https://github.com/mathrs/mathrs/issues/")]
-//
 
 //! <img src="https://raw.githubusercontent.com/mathrs/mathrs/master/logo.png" width="256px" height="256px">
 //!
@@ -29,7 +26,7 @@
 //! **Important!** This project is still in early development! All of its features implemented over the minor versions are fully working, but prone to changes.
 //!
 //! **mathrs** is a scientific, numeric and symbolic mathematical crate for computing with [Rust](https://rust-lang.org).
-
+//!
 //! - **Website** ─ https://mathrs.github.io
 //! - **Reference** ─ https://mathrs.github.io/reference
 //! - **Documentation** ─ https://docs.rs/mathrs
