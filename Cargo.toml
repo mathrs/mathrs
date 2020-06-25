@@ -1,6 +1,6 @@
 [package]
 name = "mathrs"
-version = "0.0.3"
+version = "0.0.4"
 
 authors = ["Pedro Cabral <pedro@cabral.mat.br>"]
 keywords = ["mathrs", "scientific", "numeric", "symbolic", "math", "rust"]
