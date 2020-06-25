@@ -3,7 +3,7 @@ name = "mathrs"
 version = "0.0.4"
 
 authors = ["Pedro Cabral <pedro@cabral.mat.br>"]
-keywords = ["mathrs", "scientific", "numeric", "symbolic", "math", "rust"]
+keywords = ["scientific", "numeric", "symbolic", "math", "rust"]
 
 description = "Scientific, numeric and symbolic mathematical crate for computing with Rust."
 
