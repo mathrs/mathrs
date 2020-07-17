@@ -14,11 +14,12 @@
 
 ## Features
 - **Zero dependencies**, and **no unsafe code**.
-- **Comprehensive** documentation with examples.
-- **Array** and **N-Dimensional Array** computing with utilities.
-- **2D Vector** and **3D Vector** computing.
+- **Strong** and **comprehensive** documentation with examples.
+- **Batteries included**. Everything you need, ready to use.
+- Useful for **multipurpose** computing on fields such as physics and maths.
+- Has built-in *functions*, *utilities*, *constants* and **much more**!
 
-## Installation
+## Quick Installation
 You can install mathrs on your project by inserting the following on your `Cargo.toml` file:
 
 ```toml
@@ -26,11 +27,14 @@ You can install mathrs on your project by inserting the following on your `Cargo
 mathrs = "*"
 ```
 
+## Examples and Cookbook
+For more resources on how to get started with this project, pre-made solutions and other resources, check out the [MathRS Cookbook](https://mathrs.github.io/reference)!
+
 ## Documentation
-You can check the documentation of **mathrs** on the official [docs.rs](https://docs.rs/mathrs) website.
+The official documentation of **mathrs** is available on the [docs.rs](https://docs.rs/mathrs) website.
 
 For a documentation with more examples and tutorials, check the documentation at the [GitHub Pages](https://mathrs.github.io/reference) website.
 
 ## License
 
-mathrs is provided under the MIT license. See [LICENSE](LICENSE). These files may not be copied, modified, or distributed except according to those terms.
+mathrs is provided under the Aoache 2.0 license. See [LICENSE](LICENSE). These files may not be copied, modified, or distributed except according to those terms.

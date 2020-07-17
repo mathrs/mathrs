@@ -1,6 +1,6 @@
 [package]
 name = "mathrs"
-version = "0.0.4"
+version = "0.0.5"
 
 authors = ["Pedro Cabral <pedro@cabral.mat.br>"]
 keywords = ["scientific", "numeric", "symbolic", "math", "rust"]
@@ -11,7 +11,7 @@ homepage = "https://mathrs.github.io/"
 repository = "https://github.com/mathrs/mathrs"
 documentation = "https://docs.rs/mathrs"
 
-license = "MIT"
+license = "Apache-2.0"
 
 readme = "README.md"
 

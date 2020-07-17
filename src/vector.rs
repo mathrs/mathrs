@@ -40,7 +40,6 @@ impl Index<u8> for Vector {
 }
 
 impl IndexMut<u8> for Vector {
-
     /// You can set the `y` and `x` values of a `Vector` using indexing with `[]` and `=`.
     /// ```rust
     /// use mathrs::Vector;
@@ -193,6 +192,29 @@ impl Vector {
         Vector {
             x: self.y * -1.0,
             y: self.x,
+        }
+    }
+
+    /// You can get the norm of a `Vector` by using the method `norm()`.
+    /// ```rust
+    /// use mathrs::Vector;
+    /// let v1 = Vector {x: 1.0, y: 1.0};
+    /// assert_eq!(v1.norm(), 1.4142135623730951)
+    /// ```
+    pub fn norm(self) -> f64 {
+        return ((self.x.abs() * self.x.abs()) + (self.y.abs() * self.y.abs())).sqrt();
+    }
+
+    /// You can normalize a `Vector` by using the method `normalize()`.
+    /// ```rust
+    /// use mathrs::Vector;
+    /// let v1 = Vector {x: 1.0, y: 1.0};
+    /// assert_eq!(v1.normalize(), Vector {x: 0.7071067811865475, y: 0.7071067811865475})
+    /// ```
+    pub fn normalize(self) -> Vector {
+        Vector {
+            x: self.x / self.norm(),
+            y: self.y / self.norm(),
         }
     }
 }

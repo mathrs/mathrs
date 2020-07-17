@@ -1,7 +1,7 @@
 /*
 
     MathRS ─ Scientific, numeric and symbolic mathematical crate for computing with Rust.
-    Copyright (c) 2020 mathrs team
+    Copyright (c) 2020 ─ MathRS Team
 
 */
 
@@ -39,22 +39,32 @@
 //! mathrs = "*"
 //! ```
 
-// src/point.rs
+// MathRS Constants
+
 mod constants;
 pub use constants::*;
 
-// src/point.rs
+// MathRS Structs
+
 mod point;
 pub use point::*;
 
-// src/vector.rs
 mod vector;
 pub use vector::*;
 
-// src/vector3d.rs
 mod vector3d;
 pub use vector3d::*;
 
-// src/tests.rs
-mod tests;
-pub use tests::*;
+mod ndarray;
+pub use ndarray::*;
+
+// MathRS Modules
+
+/// Syntax sugar for easy code comprehension.
+pub mod syntax_sugar;
+
+/// Trigonometry functions and utilities.
+pub mod trigonometry;
+
+/// Hyperbolic functions and utilities.
+pub mod hyperbolic;

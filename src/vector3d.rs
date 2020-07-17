@@ -208,4 +208,28 @@ impl Vector3D {
             z: (-1.0 * other.x) * self.y + self.x * other.y, // -x2 y1 + x1 y2
         }
     }
+
+    /// You can get the norm of a `Vector3D` by using the method `norm()`.
+    /// ```rust
+    /// use mathrs::Vector3D;
+    /// let v1 = Vector3D {x: 1.0, y: 1.0, z: 1.0};
+    /// assert_eq!(v1.norm(), 1.7320508075688772)
+    /// ```
+    pub fn norm(self) -> f64 {
+        return ((self.x.abs() * self.x.abs()) + (self.y.abs() * self.y.abs()) + (self.z.abs() * self.z.abs())).sqrt()
+    }
+
+    /// You normalize a `Vector3D` by using the method `normalize()`.
+    /// ```rust
+    /// use mathrs::Vector3D;
+    /// let v1 = Vector3D {x: 1.0, y: 1.0, z: 1.0};
+    /// assert_eq!(v1.normalize(), Vector3D {x: 0.5773502691896258, y: 0.5773502691896258, z: 0.5773502691896258})
+    /// ```
+    pub fn normalize(self) -> Vector3D {
+        Vector3D {
+            x: self.x / self.norm(),
+            y: self.y / self.norm(),
+            z: self.z / self.norm()
+        }
+    }
 }
