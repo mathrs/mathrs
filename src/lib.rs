@@ -55,8 +55,8 @@ pub use vector::*;
 mod vector3d;
 pub use vector3d::*;
 
-mod ndarray;
-pub use ndarray::*;
+mod matrix;
+pub use matrix::*;
 
 // MathRS Modules
 

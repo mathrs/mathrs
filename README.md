@@ -27,6 +27,8 @@ You can install mathrs on your project by inserting the following on your `Cargo
 mathrs = "*"
 ```
 
+## Syntax Sugar
+
 ## Examples and Cookbook
 For more resources on how to get started with this project, pre-made solutions and other resources, check out the [MathRS Cookbook](https://mathrs.github.io/reference)!
 
