@@ -37,4 +37,4 @@ For a documentation with more examples and tutorials, check the documentation at
 
 ## License
 
-mathrs is provided under the Aoache 2.0 license. See [LICENSE](LICENSE). These files may not be copied, modified, or distributed except according to those terms.
+mathrs is provided under the Apache 2.0 license. See [LICENSE](LICENSE). These files may not be copied, modified, or distributed except according to those terms.
