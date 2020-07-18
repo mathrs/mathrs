@@ -55,9 +55,6 @@ pub use vector::*;
 mod vector3d;
 pub use vector3d::*;
 
-mod matrix;
-pub use matrix::*;
-
 // MathRS Modules
 
 /// Syntax sugar for easy code comprehension.
